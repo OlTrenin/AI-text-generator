@@ -11,14 +11,14 @@ import {Register} from "../pages/register/Register.tsx";
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
       <BrowserRouter>
+          <App />
           <Routes>
             <Route path="/" element={ <Home /> }/>
               <Route path="/dictonary" element={ <Dictonary /> }/>
               <Route path="/login" element={ <Login /> }/>
               <Route path="/register" element={ <Register /> }/>
-
           </Routes>
-          <App />
+
       </BrowserRouter>
   </StrictMode>,
 )

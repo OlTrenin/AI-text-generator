@@ -1,9 +1,9 @@
-import {Navbar} from "../../widgets/Navbar.tsx";
+import {Menu} from "../../entities/menu/menu.tsx";
 
 export function Home() {
     return (
-        <div>
-            <Navbar />
-        </div>
+        <>
+        <Menu />
+        </>
     );
 }
