@@ -16,8 +16,8 @@ export function GeneratedTextBox({ generatedText, isLoading }: Props) {
             justifyContent: "center",
             alignItems: "center",
             textAlign: "center",
-            border: 1,
-            borderColor: "grey.500",
+            border: generatedText && !isLoading ? 1 : 'none',
+            borderColor: generatedText && !isLoading ? "grey.500" : 0,
             borderRadius: '16px',
             p: 2,
         }}>

@@ -6,10 +6,16 @@ export function useGenerateText() {
     const [isLoading, setIsLoading] = useState(false);
 
     const handleGenerateText = async (topic: string, level: string) => {
-        setIsLoading(true);
-        const text: string = await sendMessage(topic, level);
-        setGeneratedText(text);
-        setIsLoading(false);
+        try {
+            setIsLoading(true);
+            const text: string = await sendMessage(topic, level);
+            setGeneratedText(text);
+        } catch (error) {
+            console.error(error);
+        } finally {
+            setIsLoading(false);
+        }
+
     };
     return { isLoading, generatedText, handleGenerateText };
 }
