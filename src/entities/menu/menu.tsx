@@ -6,6 +6,7 @@ import Grid from "@mui/material/Grid2";
 import {useGenerateText} from "../generatedText/useGenerateText.ts";
 import {GeneratedTextBox} from "../generatedText/generatedText.tsx";
 
+
 export function Menu() {
     const {isLoading, generatedText, handleGenerateText } = useGenerateText()
     const [topic, setTopic] = useState("");
@@ -51,13 +52,14 @@ export function Menu() {
                             </Button>
                         ))}
                     </Box>
-                    <Button variant="contained" color="primary" onClick={() => {handleGenerateText(topic,level)}} sx={{ mt: 2 }}>
+                    <Button variant="contained" color="primary" onClick={async () => { await handleGenerateText(topic,level)}} sx={{ mt: 2 }} disabled={isLoading}>
                         Сгенерировать текст
                     </Button>
                 </Grid>
                 <Grid size={{xs: 9}} mt={4} >
                         <GeneratedTextBox isLoading={isLoading} generatedText={generatedText} />
                 </Grid>
+
             </Grid>
 
         </Box>

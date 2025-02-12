@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API_URL = 'https://openrouter.ai/api/v1/chat/completions';
-const API_KEY = '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'
+const API_KEY = 'sk-or-v1-c4a5953046c39a33dfc53a750f88e98e605772b6c818826c7c90b7b8cd30b3409'
 
 export const sendMessage = async (topic: string, level: string) => {
     try {
@@ -10,7 +10,7 @@ export const sendMessage = async (topic: string, level: string) => {
             {
                 model: "deepseek/deepseek-r1-distill-llama-8b", // Укажи модель, если требуется
                 messages: [
-                    { role: "user", content: `Напиши художественный текст на тему "${topic}" на уровне ${level} Английского языка, без вводных фраз и мыслей` }
+                    { role: "user", content: `Напиши художественный текст на тему "${topic}" на уровне ${level} Английского языка минимум на 150 слов, без вводных фраз и мыслей` }
                 ],
                 max_tokens: 1000, // Максимальное количество токенов
                 temperature: 0.7, // Креативность
